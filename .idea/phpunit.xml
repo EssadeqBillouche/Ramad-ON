@@ -3,8 +3,8 @@
   <component name="PHPUnit">
     <option name="directories">
       <list>
-        <option value="$PROJECT_DIR$/Ramad-On/tests/Unit" />
-        <option value="$PROJECT_DIR$/Ramad-On/tests/Feature" />
+        <option value="$PROJECT_DIR$/ramad-On/tests/Unit" />
+        <option value="$PROJECT_DIR$/ramad-On/tests/Feature" />
       </list>
     </option>
   </component>

@@ -49,92 +49,37 @@
     <div class="max-w-4xl mx-auto px-4 py-8">
         <!-- Publication Header -->
         <header class="mb-8">
-            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-2">The Importance of Ramadan in Islamic Culture</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-2">{{ $post->title }}</h1>
             <div class="flex items-center text-sm text-gray-600">
-                <img src="/api/placeholder/40/40" alt="Author" class="w-10 h-10 rounded-full mr-3">
-                <span class="mr-3">By Mohammed Ali</span>
                 <span class="mr-3">|</span>
-                <time datetime="2025-03-15">March 15, 2025</time>
+                <time datetime="{{ $post->created_at->toDateString() }}">{{ $post->created_at->format('F j, Y') }}</time>
                 <span class="mr-3">|</span>
-                <span>5 min read</span>
             </div>
         </header>
 
         <!-- Publication Content -->
         <article class="prose prose-lg max-w-none mb-12">
-            <p>Ramadan, the ninth month of the Islamic calendar, holds immense significance for Muslims worldwide. It is a time of spiritual reflection, increased devotion, and communal solidarity.</p>
-            <h2>The Spiritual Journey</h2>
-            <p>During Ramadan, Muslims fast from dawn to sunset, abstaining from food, drink, and other physical needs. This practice is not merely about denying oneself, but about purifying the soul, practicing self-discipline, and focusing on spiritual growth.</p>
-            <blockquote>
-                "O you who have believed, decreed upon you is fasting as it was decreed upon those before you that you may become righteous" - Quran 2:183
-            </blockquote>
-            <p>The fast is broken each evening with a meal called Iftar, often shared with family and friends, fostering a sense of community and gratitude.</p>
-            <!-- Add more content as needed -->
+            <p>{{ $post->content }}</p>
         </article>
-
-        <!-- Tags -->
-        <div class="mb-12">
-            <h3 class="text-lg font-semibold text-primary mb-3">Tags</h3>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Ramadan</span>
-                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Islam</span>
-                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Fasting</span>
-                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Spirituality</span>
-            </div>
-        </div>
-
-        <!-- Comments Section -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold text-primary mb-4">Comments</h2>
-
-            <!-- Existing Comments -->
-            <div class="space-y-6 mb-8">
-                <!-- Comment 1 -->
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <div class="flex items-center mb-2">
-                        <img src="/api/placeholder/40/40" alt="Commenter" class="w-8 h-8 rounded-full mr-3">
-                        <div>
-                            <h4 class="font-semibold text-primary">Ahmed Hassan</h4>
-                            <time datetime="2025-03-16" class="text-sm text-gray-600">March 16, 2025</time>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">Thank you for this insightful article. It really helped me understand the deeper meaning of Ramadan.</p>
-                </div>
-
-                <!-- Comment 2 -->
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <div class="flex items-center mb-2">
-                        <img src="/api/placeholder/40/40" alt="Commenter" class="w-8 h-8 rounded-full mr-3">
-                        <div>
-                            <h4 class="font-semibold text-primary">Fatima Ali</h4>
-                            <time datetime="2025-03-17" class="text-sm text-gray-600">March 17, 2025</time>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">I appreciate how you've explained the spiritual aspects of fasting. It's not just about abstaining from food and drink, but about nurturing our souls.</p>
-                </div>
-            </div>
-
-            <!-- Add Comment Form -->
-            <form class="bg-white p-6 rounded-lg shadow">
-                <h3 class="text-xl font-semibold text-primary mb-4">Add a Comment</h3>
-                <div class="mb-4">
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                </div>
-                <div class="mb-4">
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
-                </div>
-                <div class="mb-4">
-                    <label for="comment" class="block text-sm font-medium text-gray-700 mb-1">Comment</label>
-                    <textarea id="comment" name="comment" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
-                </div>
-                <button type="submit" class="px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
-                    Post Comment
-                </button>
-            </form>
-        </section>
     </div>
+    <form class="bg-white p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold text-primary mb-4">Add a Comment</h3>
+        <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+        </div>
+        <div class="mb-4">
+            <label for="comment" class="block text-sm font-medium text-gray-700 mb-1">Comment</label>
+            <textarea id="comment" name="comment" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+        </div>
+        <button type="submit" class="px-4 py-2 bg-accent text-white rounded-md hover:bg-accent/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent">
+            Post Comment
+        </button>
+    </form>
 </main>
 
 <!-- Footer -->

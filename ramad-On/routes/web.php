@@ -10,6 +10,9 @@ Route::get('/', function () {
 
 Route::get('/Posts',[PostController::class, 'index']);
 Route::resource('posts', PostController::class);
+Route::post('/posts/{id}/comment', [PostController::class, 'storeComment'])->name('posts.storeComment');
+
+
 
 
 

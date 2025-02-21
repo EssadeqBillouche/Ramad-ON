@@ -7,10 +7,11 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
-            $table->text('content');
-            $table->string('image')->nullable();
-            $table->timestamps();
+            $table->id(); // Auto-increment primary key
+            $table->string('title'); // Add title column
+            $table->text('content'); // Content column
+            $table->string('image')->nullable(); // Image (optional)
+            $table->timestamps(); // created_at & updated_at timestamps
         });
     }
 
@@ -19,4 +20,3 @@ return new class extends Migration {
         Schema::dropIfExists('posts');
     }
 };
-

@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['content', 'image'];
+    protected $fillable = ['title','content', 'image'];
 
     /**
      * A post can have many comments (polymorphic).
